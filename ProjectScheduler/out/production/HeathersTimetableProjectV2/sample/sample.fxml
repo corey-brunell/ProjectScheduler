@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="textField" layoutX="10.0" layoutY="14.0" onKeyPressed="#addButtonActionKB" prefHeight="27.0" prefWidth="259.0" />
+      <ListView fx:id="listName" layoutX="10.0" layoutY="96.0" onMouseReleased="#gridDisplay" prefHeight="304.0" prefWidth="259.0" />
+      <Button fx:id="addButton" layoutX="31.0" layoutY="56.0" mnemonicParsing="false" onAction="#addButtonAction" text="Add" />
+      <Button layoutX="140.0" layoutY="56.0" mnemonicParsing="false" onAction="#removeButtonAction" text="Remove Selected" />
+      <HBox layoutX="300.0" layoutY="21.0" prefHeight="40.0" prefWidth="290.0">
+         <children>
+            <Button fx:id="monday" mnemonicParsing="false" onAction="#mondayAction" prefHeight="40.0" prefWidth="58.0" text="Monday" textAlignment="CENTER" textOverrun="CLIP" />
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#tuesdayAction" prefHeight="40.0" prefWidth="58.0" text="Tuesday" textAlignment="CENTER" textOverrun="CLIP" />
+            <Button mnemonicParsing="false" onAction="#wednesdayAction" prefHeight="40.0" prefWidth="58.0" text="Wednesday" textAlignment="CENTER" textOverrun="CLIP" />
+            <Button mnemonicParsing="false" onAction="#thursdayAction" prefHeight="40.0" prefWidth="58.0" text="Thursday" textAlignment="CENTER" textOverrun="CLIP" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#fridayAction" prefHeight="40.0" prefWidth="58.0" text="Friday" textAlignment="CENTER" textOverrun="CLIP" />
+         </children>
+      </HBox>
+      <GridPane fx:id="rootGrid" layoutX="300.0" layoutY="96.0" prefHeight="304.0" prefWidth="289.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="145.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="145.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="145.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="145.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Rectangle fx:id="grid00" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" />
+            <Text fx:id="grid00Text" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="8:00am" textAlignment="CENTER" wrappingWidth="73.21875" />
+            <Rectangle fx:id="grid01" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="1" />
+            <Text fx:id="grid00Text1" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="8:30am" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="1" />
+            <Rectangle fx:id="grid02" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="2" />
+            <Text fx:id="grid00Text11" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="9:00am" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="2" />
+            <Rectangle fx:id="grid03" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="3" />
+            <Text fx:id="grid00Text12" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="9:30am" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="3" />
+            <Rectangle fx:id="grid10" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.rowIndex="1" />
+            <Text fx:id="grid00Text13" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="10:00am" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.rowIndex="1" />
+            <Rectangle fx:id="grid11" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Text fx:id="grid00Text14" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="10:30am" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Rectangle fx:id="grid12" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Text fx:id="grid00Text15" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="11:00am" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Rectangle fx:id="grid13" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Text fx:id="grid00Text16" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="11:30am" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Rectangle fx:id="grid20" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.rowIndex="2" />
+            <Text fx:id="grid00Text17" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="12:00pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.rowIndex="2" />
+            <Rectangle fx:id="grid21" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Text fx:id="grid00Text18" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="12:30pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Rectangle fx:id="grid22" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text fx:id="grid00Text19" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Rectangle fx:id="grid23" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Text fx:id="grid00Text191" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="1:30pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Rectangle fx:id="grid30" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.rowIndex="3" />
+            <Text fx:id="grid00Text192" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="2:00pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.rowIndex="3" />
+            <Rectangle fx:id="grid31" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Text fx:id="grid00Text193" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="2:30pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Rectangle fx:id="grid32" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Text fx:id="grid00Text194" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="3:00pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Rectangle fx:id="grid33" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Text fx:id="grid00Text195" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="3:30pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Rectangle fx:id="grid40" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.rowIndex="4" />
+            <Text fx:id="grid00Text196" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="4:00pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.rowIndex="4" />
+            <Rectangle fx:id="grid41" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Text fx:id="grid00Text197" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="4:30pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Rectangle fx:id="grid42" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Text fx:id="grid00Text198" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="5:00pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Rectangle fx:id="grid43" arcHeight="5.0" arcWidth="5.0" fill="RED" height="63.0" onMouseReleased="#gridAction" stroke="BLACK" strokeType="INSIDE" width="72.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Text fx:id="grid00Text199" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="5:30pm" textAlignment="CENTER" wrappingWidth="73.21875" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Label fx:id="whatDayText" alignment="CENTER" contentDisplay="CENTER" layoutX="300.0" layoutY="61.0" prefHeight="30.0" prefWidth="289.0" textAlignment="JUSTIFY">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
