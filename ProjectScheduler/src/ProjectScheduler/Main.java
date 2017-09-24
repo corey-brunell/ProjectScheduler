@@ -14,10 +14,19 @@ public class Main extends Application {
         primaryStage.setTitle("Group Free Time v0.0.0.0.0.1.0.1");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
+        //saves on close
+        primaryStage.setOnCloseRequest(e -> {
+            e.consume();
+            Controller.fileH.saveFile(Controller.gridSize, Controller.list);
+            primaryStage.close();
+                });
     }
 
 
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }

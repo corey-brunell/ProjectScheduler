@@ -22,7 +22,7 @@ public class Controller {
     private TextField textField;
 
     @FXML
-    private ListView listName;
+    public ListView listName; //public to access from FileHandler
 
     @FXML
     private Label whatDayText;
@@ -39,16 +39,19 @@ public class Controller {
     private GridPane rootGrid;
 
     //creating array list for listview. add to list, set list2 as observable array list
-    ArrayList<People> list = new ArrayList<>();
+    static ArrayList<People> list = new ArrayList<>();
     ObservableList list2;
     //arraylist for the grid
     ArrayList<Rectangle> gridList = new ArrayList<>();
 
+    //group is file name (can change to add a new group to handle multiple groups later, though file system may need to change some at that point too)
+    static FileHandler fileH = new FileHandler("group", 5);
+
     //dayButtonIndex is used for tracking which day of the week you clicked on. days of the week are retrieved from People.java
     private int dayButtonIndex;
 
-    //x is used for the size of the grid, which is used in Days.java (for creating an arraylist for the size of the grid)
-    static int x;
+    //this is used for the size of the grid, which is used in Days.java and FileHandler.java (for creating an arraylist for the size of the grid)
+    static int gridSize;
 
     public void initialize(){
 
@@ -56,11 +59,9 @@ public class Controller {
         //this is not needed but good reference for how to add stuff to the arraylist and display them
         //as an oberservable arraylist
         rootGrid.setVisible(false);
-        ArrayList<String> listIgnore = new ArrayList<>();
-        listIgnore.add("");
-        list2 = FXCollections.observableArrayList(listIgnore);
-        listName.setItems(list2);
-        listIgnore.remove(0);
+
+        for (int i=0; i< list.size(); i++)
+            System.out.println(list.get(i));
 
         //adding all of the rectangles to the gridlist
         Collections.addAll(gridList, grid00, grid01, grid02, grid03,
@@ -68,16 +69,21 @@ public class Controller {
                 grid20, grid21, grid22, grid23,
                 grid30, grid31, grid32, grid33,
                 grid40, grid41, grid42, grid43);
-        x = gridList.size();
+        gridSize = gridList.size();
+        list = fileH.LoadFile(gridSize); //loads in file data
+
+        list2 = FXCollections.observableArrayList(list);
+        listName.setItems(list2);
     }
 
-    //method is called when you click 'Add'
+    //method is called when you click 'Add' - creates person
     public void addButtonAction(){
         People people = new People(textField.getText());
         list.add(people);
         list2 = FXCollections.observableArrayList(list);
         listName.setItems(list2);
         textField.clear();
+        System.out.println(list.size());
     }
 
     //method is called when you press ENTER after or while typing in the textfield
@@ -166,7 +172,5 @@ public class Controller {
                 gridList.get(i).setFill(Color.RED);
         }
     }
-
-
 
 }

@@ -9,7 +9,7 @@ public class Days {
     //this retrieves X from the main controller to match the size of the grid
     public Days(){
         list = new ArrayList<>();
-        for(int i=0;i<Controller.x;i++){
+        for(int i=0;i<Controller.gridSize;i++){
             list.add(false);
         }
     }
